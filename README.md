@@ -6,6 +6,16 @@ A reproducibility-oriented workflow for multiplex immunofluorescence (mIF)
 cell measurements, patch-level pixel intensity audits, exploratory phenotyping,
 and centroid-distance spatial neighborhood analysis.
 
+## Main results at a glance
+
+![Engineering validation](assets/engineering_validation.svg)
+
+**Figure 1.** Engineering audit of one LuCa7 ROI. The 31,440 intensity values were independently remeasured from exported polygon ROIs; they are not pixel-exact recoveries of original QuPath segmentation-label values. CK/CD8 gating thresholds are exploratory and biologically unvalidated.
+
+![Spatial robustness](assets/spatial_robustness.svg)
+
+**Figure 2.** Original versus independently remeasured neighborhood results across 15–75 μm. At the primary 30 μm radius, edges changed from 214 to 212, while covered CK+/CD8− centers remained 100. All results are from the same ROI and do not establish clinical or cross-patient generalization.
+
 ## Verified engineering results (one LuCa7 ROI)
 
 | Check | Result |
@@ -65,3 +75,19 @@ without data rights, appropriate permissions and de-identification review.
 
 Engineering workflow frozen as **v1.0 (2026-10-30)**. Biological validation
 remains future work.
+
+## Groovy Script Configuration
+
+The QuPath Groovy scripts use the environment variable
+`QUPATH_MIF_ROOT` to locate the local project directory.
+
+Example on Linux:
+
+```bash
+export QUPATH_MIF_ROOT="/path/to/your/QuPath-mIF-project"
+Launch QuPath from an environment where this variable is set.
+Otherwise, the exporter scripts will raise an explanatory error.
+
+The original microscopy data and QuPath project files are
+not distributed in this repository.EOF
+
