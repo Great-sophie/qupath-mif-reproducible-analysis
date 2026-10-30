@@ -1,0 +1,33 @@
+# Private or restricted research data (defense in depth)
+/data/
+/results/
+*.tif
+*.tiff
+*.qptiff
+*.ome.tif
+*.qpdata
+*.qpproj
+*.geojson
+*.csv
+*.tsv
+*.h5
+*.h5ad
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.zip
+*.env
+.env*
+# caches and local environments
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+*.pyc
+.DS_Store

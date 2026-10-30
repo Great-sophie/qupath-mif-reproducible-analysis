@@ -1,0 +1,9 @@
+# Indicative Python dependencies, not an environment lock.
+numpy
+pandas
+scipy
+tifffile
+shapely
+matplotlib
+Pillow
+pytest
