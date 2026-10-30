@@ -3,7 +3,8 @@
 import java.text.SimpleDateFormat
 import java.util.Locale
 
-def ROOT = '/media/sophie/Data2T/Biomedical AI  skill/QuPath mIF Cell Quantification & Spatial Analysis'
+def ROOT = System.getenv('QUPATH_MIF_ROOT')
+if (!ROOT) throw new IllegalStateException('Set QUPATH_MIF_ROOT to the local project directory')
 def imageData = getCurrentImageData()
 if (imageData == null) {
     println 'ERROR: Open the LuCa-7color image before running this script.'

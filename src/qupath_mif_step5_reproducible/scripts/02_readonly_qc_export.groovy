@@ -6,7 +6,8 @@
 import java.text.SimpleDateFormat
 import java.util.Locale
 
-String ROOT = "/media/sophie/Data2T/Biomedical AI  skill/QuPath mIF Cell Quantification & Spatial Analysis"
+String ROOT = System.getenv('QUPATH_MIF_ROOT')
+if (!ROOT) throw new IllegalStateException('Set QUPATH_MIF_ROOT to the local project directory')
 def imageData = getCurrentImageData()
 if (imageData == null) {
     println "STOP: No image is open."

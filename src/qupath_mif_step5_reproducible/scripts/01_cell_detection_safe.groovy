@@ -5,7 +5,8 @@
  * Source: 2026-10-30 command history, FINAL DETECTION (threshold 2.0).
  */
 
-String ROOT = "/media/sophie/Data2T/Biomedical AI  skill/QuPath mIF Cell Quantification & Spatial Analysis"
+String ROOT = System.getenv('QUPATH_MIF_ROOT')
+if (!ROOT) throw new IllegalStateException('Set QUPATH_MIF_ROOT to the local project directory')
 final int EXPECTED_REFERENCE_CELLS = 1310
 
 def imageData = getCurrentImageData()

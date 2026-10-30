@@ -4,7 +4,8 @@
  * Select exactly ONE annotation first; do not select detected cells.
  */
 
-String ROOT = "/media/sophie/Data2T/Biomedical AI  skill/QuPath mIF Cell Quantification & Spatial Analysis"
+String ROOT = System.getenv('QUPATH_MIF_ROOT')
+if (!ROOT) throw new IllegalStateException('Set QUPATH_MIF_ROOT to the local project directory')
 def imageData = getCurrentImageData()
 if (imageData == null) {
     println "STOP: Open LuCa-7color image first."
